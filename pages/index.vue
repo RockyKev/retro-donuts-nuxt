@@ -2,15 +2,42 @@
   <div>
     <Header />
     <Jumbotron />
-    <section>
-      <logo />
-      <h1 class="title">retro-donuts</h1>
-      <h2 class="subtitle">My wicked Nuxt.js project</h2>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green">Documentation</a>
-        <a href="https://github.com/nuxt/nuxt.js" target="_blank" class="button--grey">GitHub</a>
-      </div>
-    </section>
+
+    <TextImage>
+      <h3 slot="header">this is a h3</h3>
+      <p slot="paragraph">This is a para</p>
+      <img slot="image" class="img-fluid" src="~assets/images/classic-donuts.png" />
+    </TextImage>
+
+    <ImageText>
+      <img slot="image" class="img-fluid" src="~assets/images/classic-donuts.png" />
+
+      <h3 slot="header">this is a h3</h3>
+      <p slot="paragraph">This is a para</p>
+    </ImageText>
+
+    <TextImage>
+      <h3 slot="header">this is a h3</h3>
+      <p slot="paragraph">This is a para</p>
+      <img slot="image" class="img-fluid" src="~assets/images/classic-donuts.png" />
+    </TextImage>
+
+    <CenterFluid column="col-4">
+      <h3>We’ve created a classically new experience. Come on by!</h3>
+      <p>
+        10925 N Newport Hwy #1
+        <br />Spokane, WA 99218
+        <br />
+        <br />Mon: Closed
+        <br />Tue - Sat: 6AM - 3PM
+        <br />Sun: 7AM - 1PM
+      </p>
+    </CenterFluid>
+
+    <CenterFluid column="col-8">
+      <img class="img-fluid" src="~assets/images/retro-ig-grid.png" />
+    </CenterFluid>
+
     <Footer />
   </div>
 </template>
@@ -19,6 +46,9 @@
 import Logo from '~/components/Logo.vue'
 import Header from '~/components/Header.vue'
 import Jumbotron from '~/components/Jumbotron.vue'
+import TextImage from '~/components/layouts/TextImage.vue'
+import ImageText from '~/components/layouts/ImageText.vue'
+import CenterFluid from '~/components/layouts/CenterFluid.vue'
 import Footer from '~/components/Footer.vue'
 
 export default {
@@ -26,9 +56,14 @@ export default {
     Logo,
     Header,
     Jumbotron,
-    Footer
+    Footer,
+    TextImage,
+    ImageText,
+    CenterFluid
   }
 }
+
+const content1 = '<h3>Is it just us?</h3>'
 </script>
 
 <style>
